@@ -23,7 +23,10 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/article">Articles</a>
-        </li>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/article/create">Create article</a>
+      </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/about">О нас</a>
         </li>
