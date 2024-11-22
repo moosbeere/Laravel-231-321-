@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\User;
+use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
 
 class ArticleController extends Controller
 {
@@ -49,8 +52,10 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
+        $comments = Comment::where('article_id', $article->id)->get();
+        // Log::alert($comments);
         $user = User::findOrFail($article->user_id);
-        return view('article.show', ['article'=>$article, 'user'=>$user]);
+        return view('article.show', ['article'=>$article, 'user'=>$user, 'comments'=>$comments]);
     }
 
     /**
