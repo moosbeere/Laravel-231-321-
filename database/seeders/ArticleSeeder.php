@@ -12,6 +12,14 @@ class ArticleSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $articles = json_decode(file_get_contents(public_path().'/articles.json'));
+        foreach($articles as $article){
+            \App\Models\Article::create([
+                'date'=>$article->date,
+                'name'=>$article->name,
+                'desc'=>$article->desc,
+                'user_id'=>random_int(1,10),
+            ]);
+        }
     }
 }
