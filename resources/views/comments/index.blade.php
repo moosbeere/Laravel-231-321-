@@ -16,6 +16,7 @@
       <th scope="col">Article Name</th>
       <th scope="col">Description</th>
       <th scope="col">Author</th>
+      <th scope="col">Accept/Reject</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +26,14 @@
       <td><a href="/article/{{ $comment->article_id }}">{{Article::findOrFail($comment->article_id)->name}}</a></td>
       <td>{{$comment->desc}}</td>
       <td>{{ User::findOrFail($comment->user_id)->name }}</td>
+      <td class="text-center">
+        @if(!$comment->accept)
+          <a href="/comment/{{$comment->id}}/accept" class="btn btn-success">Accept</a>
+        @else
+          <a href="/comment/{{$comment->id}}/reject" class="btn btn-warning">Reject</a>
+        @endif
+        </td>
+
     </tr>
     @endforeach
   </tbody>

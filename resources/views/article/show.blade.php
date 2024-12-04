@@ -1,10 +1,12 @@
 @extends('layout')
 @section('content')
+
 @if(session('status'))
   <div class="alert alert-success">
       {{ session('status') }}
   </div>
 @endif
+
 <div class="card text-center mb-3" style="width: 70rem;">
 <div class="card-header">
     Author: {{ $user->name }}
