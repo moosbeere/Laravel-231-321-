@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             // ArticleSeeder::class,
             UserSeeder::class,
         );
-        // Article::factory(10)->has(Comment::factory(3))->create(); 
+        Article::factory(10)->has(Comment::factory(3))->create(); 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
